@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oak Boutique Login/Registration</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,800" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #fff6f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      width: 450px;
+      max-width: 100%;
+      text-align: center;
+      padding: 30px;
+    }
+
+    h1 {
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #FF4B2B;
+    }
+
+    p {
+      margin-bottom: 20px;
+      color: #444;
+    }
+
+    a {
+      text-decoration: none;
+      color: #FF4B2B;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    button {
+      border: none;
+      border-radius: 25px;
+      padding: 12px 30px;
+      margin: 10px 0;
+      cursor: pointer;
+      font-weight: bold;
+      background-color: #FF4B2B;
+      color: #ffffff;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #FF6B4B;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      font-size: 14px;
+      background: #f6f5f7;
+    }
+
+    .form-container {
+      display: none;
+    }
+
+    .form-container:target {
+      display: block;
+    }
+
+    .form-container label {
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .gender-options {
+      display: flex;
+      justify-content: space-around;
+      margin: 10px 0;
+    }
+
+    .gender-options label {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .form-container .error-msg {
+      color: red;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to Oak Boutique</h1>
+    <p>Please choose an option below:</p>
+    <a href="#loginForm"><button>Login</button></a>
+    <a href="#registerForm"><button>Register</button></a>
+
+    <div id="loginForm" class="form-container">
+      <h1>Login</h1>
+      <form action="#">
+        <input 
+          type="email" 
+          placeholder="Email" 
+          required 
+          title="Enter a valid email address (e.g., user@example.com)" 
+        />
+        <input 
+          type="password" 
+          placeholder="Password" 
+          required 
+          minlength="6" 
+          title="Password must be at least 6 characters long" 
+        />
+        <button type="submit">Login</button>
+        <a href="#registerForm">Don't have an account? Register</a>
+      </form>
+    </div>
+
+    <div id="registerForm" class="form-container">
+      <h1>Register</h1>
+      <form action="#">
+        <input 
+          type="text" 
+          placeholder="Name" 
+          required 
+          pattern="^[A-Za-z\s]+$" 
+          title="Name should only contain letters and spaces." 
+        />
+        <input 
+          type="email" 
+          placeholder="Email" 
+          required 
+          title="Enter a valid email address (e.g., user@example.com)" 
+        />
+        <input 
+          type="password" 
+          placeholder="Password" 
+          required 
+          minlength="6" 
+          title="Password must be at least 6 characters long" 
+        />
+        <input 
+          type="password" 
+          placeholder="Confirm Password" 
+          required 
+          minlength="6" 
+          title="Password must be at least 6 characters long and match the above field." 
+        />
+        <div class="gender-options">
+          <label><input type="radio" name="gender" value="male" required /> Male</label>
+          <label><input type="radio" name="gender" value="female" required /> Female</label>
+          <label><input type="radio" name="gender" value="other" required /> Other</label>
+        </div>
+        <input type="date" placeholder="Date of Birth" required />
+        <textarea placeholder="Address" rows="3" required></textarea>
+        <label>Upload Profile Photo:</label>
+        <input type="file" accept="image/*" required />
+        <button type="submit">Register</button>
+        <a href="#loginForm">Already have an account? Login</a>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
